@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/BIT372-Matin_Mirzaei.iml" filepath="$PROJECT_DIR$/.idea/BIT372-Matin_Mirzaei.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RoomDB_Example.iml" filepath="$PROJECT_DIR$/.idea/modules/RoomDB_Example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/RoomDB_Example.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/RoomDB_Example.app.iml" />
     </modules>
   </component>
 </project>
