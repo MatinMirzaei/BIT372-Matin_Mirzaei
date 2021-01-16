@@ -1,5 +1,6 @@
 package com.example.roomdbexample;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
@@ -7,8 +8,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.roomdbexample.roomdb.Event;
 import com.example.roomdbexample.roomdb.EventDao;
@@ -27,10 +30,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent intent = new Intent(this, CreateEventActivity.class);
-        FloatingActionButton fab = findViewById(R.id.add_event_btn);
-        fab.setOnClickListener((view) -> startActivity(intent));
+
+
         eventList = findViewById(R.id.event_list);
     }
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
+        Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
+        return true;
+    }
+
+
 
     @Override
     protected void onResume() {
