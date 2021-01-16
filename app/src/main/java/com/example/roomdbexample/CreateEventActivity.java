@@ -37,7 +37,7 @@ public class CreateEventActivity extends AppCompatActivity {
 
 
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Add Your Event");
+        actionBar.setTitle("Please Add Your Event");
 
 
         Spinner eventType = findViewById(R.id.event_image_type);

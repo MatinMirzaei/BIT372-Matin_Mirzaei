@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.add_item:
-
+                startActivity(new Intent(MainActivity.this, CreateEventActivity.class));
         }
 
 
