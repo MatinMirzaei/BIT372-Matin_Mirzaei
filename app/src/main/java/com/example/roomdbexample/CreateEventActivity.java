@@ -1,5 +1,6 @@
 package com.example.roomdbexample;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
@@ -33,6 +34,11 @@ public class CreateEventActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
+
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Add Your Event");
+
 
         Spinner eventType = findViewById(R.id.event_image_type);
         ArrayAdapter<CharSequence> types =
