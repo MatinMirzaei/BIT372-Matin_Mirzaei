@@ -2,16 +2,31 @@ package com.example.eventlistmvvm;
 
 import android.content.Context;
 
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
+import com.example.eventlistmvvm.roomdb.Event;
+
+import java.util.List;
 
 import javax.net.ssl.SSLSession;
 
 public class EventListViewModel extends ViewModel {
-    public void init(Context applicationContext) {
+    private MutableLiveData<List<Event>> eventsData;
+    private EventRepository repo;
+
+    public void init(Context context) {
+        if (eventsData == null) {
+            eventsData = new MutableLiveData<>();
+        }
+        repo = EventRepository.getInstance(context);
+        eventsData.setValue(repo.getEvents());
     }
 
-    public SSLSession getEvents() {
-    }
+    public MutableLiveData<List<Event>> getEvents() {
+        eventsData.setValue(repo.getEvents());
+        return eventsData;
+     }
     // TODO: Complete the VM class
     // Make the MutableLiveData a singleton
 }
