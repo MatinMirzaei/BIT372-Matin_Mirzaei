@@ -58,4 +58,54 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" />
 
+    //lb to kg
+
+
+        <TextView
+            android:id="@+id/pound_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="204dp"
+            android:text="Pound to Kilogram"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/pound_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintEnd_toStartOf="@+id/convert2_btn"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pound_title" />
+
+        <Button
+            android:id="@+id/convert2_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="248dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginRight="28dp"
+            android:text="Convert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/kilogram_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="188dp"
+        android:text="kg"
+        app:layout_constraintEnd_toStartOf="@+id/convert_btn"
+        app:layout_constraintHorizontal_bias="0.103"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fahrenheit_input" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

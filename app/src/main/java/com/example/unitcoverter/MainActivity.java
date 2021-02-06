@@ -23,6 +23,21 @@ public class MainActivity extends AppCompatActivity {
                 return;
             double celcius = Converter.toCelcius(Float.parseFloat(finput.getText().toString()));
             ctxt.setText(String.format("%.2f ºC", celcius));
+
+
+
+
+           /*
+            Button fbtn2 = findViewById(R.id.convert2_btn);
+
+            EditText finput2 = findViewById(R.id.pound_input);
+            TextView ctxt2 = findViewById(R.id.kilogram_text);
+            fbtn2.setOnClickListener(v -> {
+                if (finput2.getText().length() == 0)
+                    return;
+                double kilogram = Converter.toCelcius(Float.parseFloat(finput2.getText().toString()));
+                ctxt2.setText(String.format("%.2f ºC", celcius));
+          */
         });
     }
 }
