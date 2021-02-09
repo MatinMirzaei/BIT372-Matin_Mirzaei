@@ -12,6 +12,12 @@ import static org.junit.Assert.*;
 public class ConverterTest {
     @Test
     public void fahrenheit_conversion_isCorrect() {
-        assertEquals(0.0, Converter.toCelcius(32),0.01);
+        assertEquals(0.0, Converter.toCelsius(32),0.01);
+
+    }
+
+    @Test
+    public void pounds_conversion_isCorrect() {
+        assertEquals(0.45359237, Converter.toKilogram((float) 1), 0.01);
     }
 }

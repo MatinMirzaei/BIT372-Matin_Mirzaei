@@ -45,4 +45,18 @@ public class MainActivityUITest {
         onView(withId(R.id.convert_btn)).perform(click());
         onView(withId(R.id.celcius_text)).check(matches(withText("ºC")));
     }
+
+
+    @Test
+    public void can_enter_pound() {
+        onView(withId(R.id.pound_input)).perform(typeText("150"));
+        onView(withId(R.id.convert2_btn)).perform(click());
+        onView(withId(R.id.kilogram_text)).check(matches(withText("68.04 kg")));
+    }
+
+    @Test
+    public void should_not_enter_empty_pod() {
+        onView(withId(R.id.convert2_btn)).perform(click());
+        onView(withId(R.id.kilogram_text)).check(matches(withText("kg")));
+    }
 }
