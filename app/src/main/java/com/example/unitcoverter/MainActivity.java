@@ -17,7 +17,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Spinner spinner;
     private TextView tv;
 
     @Override
@@ -26,13 +25,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
-
-
-
         //Spinner
 
-        spinner = findViewById(R.id.spinner);
+        Spinner spinner = findViewById(R.id.spinner);
         tv = (TextView)findViewById(R.id.converter_title);
 
         String [] converters = {"Select One","Fahrenheit to Celsius", "Pound to Kilogram", "Mile to kilometer", "Ounce to Milliliter", "Feet to Meter"};
@@ -41,10 +36,12 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
 
-
         spinner.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+
+
 
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
