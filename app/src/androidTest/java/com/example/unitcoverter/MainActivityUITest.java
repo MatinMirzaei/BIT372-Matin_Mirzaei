@@ -10,6 +10,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.ArrayList;
+
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.*;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
@@ -32,9 +34,11 @@ public class MainActivityUITest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.example.unitcoverter", appContext.getPackageName());
     }
-
+/*
     @Test
     public void can_enter_fahrenheit() {
+        onView(withId(R.id.spinner)).perform(click());
+        onView(withSpinnerText(<"Fahrenheit to Celsius">)).perform(click());
         onView(withId(R.id.cv_input)).perform(typeText("45"));
         onView(withId(R.id.convert_btn)).perform(click());
         onView(withId(R.id.cv_text)).check(matches(withText("7.22 ºC")));
@@ -85,5 +89,5 @@ public class MainActivityUITest {
         onView(withId(R.id.convert_btn)).perform(click());
         onView(withId(R.id.cv_text)).check(matches(withText("ml")));
     }
-
+*/
 }
