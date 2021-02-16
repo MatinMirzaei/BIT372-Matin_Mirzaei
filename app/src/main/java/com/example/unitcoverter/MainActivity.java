@@ -2,6 +2,8 @@ package com.example.unitcoverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,27 +17,34 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private Spinner spinner;
-    private TextView display_title;
+    private TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Converter converter = new Converter("Converter");
+
+
+
 
         //Spinner
 
         spinner = findViewById(R.id.spinner);
+        tv = (TextView)findViewById(R.id.converter_title);
 
-        String [] converter = {"Select One","Fahrenheit to Celsius", "Pound to Kilogram", "Mile to kilometer", "Ounce to Milliliter"};
+        String [] converters = {"Select One","Fahrenheit to Celsius", "Pound to Kilogram", "Mile to kilometer", "Ounce to Milliliter"};
 
-        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, converter);
+        ArrayAdapter<String>adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, converters);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        display_title = (TextView)findViewById(R.id.fahrenheit_title);
+
 
         spinner.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
@@ -46,7 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 String text = parent.getItemAtPosition(position).toString();
                 Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
 
-
+                if (position == 0) {
+                    tv.setText("");
+                }
+                else {
+                    tv.setText(converters[position]);
+                    tv.setTextSize(24);
+                }
 
 
             }
