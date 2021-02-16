@@ -17,7 +17,17 @@ public class ConverterTest {
     }
 
     @Test
-    public void pounds_conversion_isCorrect() {
+    public void pound_conversion_isCorrect() {
         assertEquals(0.45359237, Converter.toKilogram((float) 1), 0.01);
+    }
+
+    @Test
+    public void mile_conversion_isCorrect() {
+        assertEquals(3.21869, Converter.toKilometer((float) 2), 0.01);
+    }
+
+    @Test
+    public void feet_conversion_isCorrect() {
+        assertEquals(1.524, Converter.toMeter((float) 5), 0.01);
     }
 }

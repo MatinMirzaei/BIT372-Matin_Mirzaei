@@ -35,30 +35,55 @@ public class MainActivityUITest {
 
     @Test
     public void can_enter_fahrenheit() {
-        onView(withId(R.id.input)).perform(typeText("45"));
+        onView(withId(R.id.cv_input)).perform(typeText("45"));
         onView(withId(R.id.convert_btn)).perform(click());
-        onView(withId(R.id.celcius_text)).check(matches(withText("7.22 ºC")));
+        onView(withId(R.id.cv_text)).check(matches(withText("7.22 ºC")));
     }
 
     @Test
     public void should_not_enter_empty_fah() {
         onView(withId(R.id.convert_btn)).perform(click());
-        onView(withId(R.id.celcius_text)).check(matches(withText("ºC")));
+        onView(withId(R.id.cv_text)).check(matches(withText("ºC")));
     }
 
-/*
+
     @Test
     public void can_enter_pound() {
-        onView(withId(R.id.pound_input)).perform(typeText("150"));
-        onView(withId(R.id.convert2_btn)).perform(click());
-        onView(withId(R.id.kilogram_text)).check(matches(withText("68.04 kg")));
+        onView(withId(R.id.cv_input)).perform(typeText("150"));
+        onView(withId(R.id.convert_btn)).perform(click());
+        onView(withId(R.id.cv_text)).check(matches(withText("68.04 kg")));
     }
 
     @Test
     public void should_not_enter_empty_pod() {
-        onView(withId(R.id.convert2_btn)).perform(click());
-        onView(withId(R.id.kilogram_text)).check(matches(withText("kg")));
+        onView(withId(R.id.convert_btn)).perform(click());
+        onView(withId(R.id.cv_text)).check(matches(withText("kg")));
     }
 
- */
+    @Test
+    public void can_enter_mile() {
+        onView(withId(R.id.cv_input)).perform(typeText("20"));
+        onView(withId(R.id.convert_btn)).perform(click());
+        onView(withId(R.id.cv_text)).check(matches(withText("32.19 km")));
+    }
+
+    @Test
+    public void should_not_enter_empty_mls() {
+        onView(withId(R.id.convert_btn)).perform(click());
+        onView(withId(R.id.cv_text)).check(matches(withText("km")));
+    }
+
+    @Test
+    public void can_enter_ounce() {
+        onView(withId(R.id.cv_input)).perform(typeText("10"));
+        onView(withId(R.id.convert_btn)).perform(click());
+        onView(withId(R.id.cv_text)).check(matches(withText("295.73 ml")));
+    }
+
+    @Test
+    public void should_not_enter_empty_oz() {
+        onView(withId(R.id.convert_btn)).perform(click());
+        onView(withId(R.id.cv_text)).check(matches(withText("ml")));
+    }
+
 }
